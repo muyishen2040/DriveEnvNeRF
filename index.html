@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A NeRF-based autonomous driving environment for real-world performance validation.">
+  <meta name="keywords" content="DriveEnv-NeRF, RL, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DriveEnv-NeRF: Exploration of A NeRF-Based Autonomous Driving Environment for Real-World Performance Validation
+  </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/mp4/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DriveEnv-NeRF</h1>
+            <h3 class="publication-title">Exploration of A NeRF-Based Autonomous Driving Environment for
+              Real-World Performance Validation</h3>
+            <hr>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Mu-Yi Shen<sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                Chia-Chi Hsu<sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                Hao-Yu Hou<sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                Yu-Chen Huang<sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                Wei-Fang Sun<sup>2</sup>,
+              </span><br>
+              <span class="author-block">
+                Chia-Che Chang<sup>3</sup>,
+              </span>
+              <span class="author-block">
+                Yu-Lun Liu<sup>4</sup>,
+              </span>
+              <span class="author-block">
+                Chun-Yi Lee<sup>1</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Elsa Lab, National Tsing Hua University,</span>
+              <span class="author-block"><sup>2</sup>NVIDIA AI Technology Center, NVIDIA Corporation,</span>
+              <span class="author-block"><sup>3</sup>MediaTek Inc.,</span>
+              <span class="author-block"><sup>4</sup>National Yang Ming Chiao Tung University,</span>
+              <span class="author-block"><sup>*</sup>Equal Contribution</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+                <span class="link-block">
+                  <!-- TODO: Add link -->
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://youtu.be/8wNflV_A5FM"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/muyishen2040/DriveEnvNeRF"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <section class="hero teaser">
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/8wNflV_A5FM?si=ecMWetW--N-oaoWG" frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In this study, we introduce the DriveEnv-NeRF framework, which leverages Neural Radiance Fields (NeRF) to
+              enable the validation and faithful forecasting of the efficacy of autonomous driving agents in a targeted
+              real-world scene. Standard simulator-based rendering often fails to accurately reflect real-world
+              performance due to the sim-to-real gap, which represents the disparity between virtual simulations and
+              real-world conditions. To mitigate this gap, we propose a workflow for building a high-fidelity simulation
+              environment of the targeted real-world scene using NeRF. This approach is capable of rendering realistic
+              images from novel viewpoints and constructing 3D meshes for emulating collisions. The validation of these
+              capabilities through the comparison of success rates in both simulated and real environments demonstrates
+              the benefits of using DriveEnv-NeRF as a real-world performance indicator. Furthermore, the DriveEnv-NeRF
+              framework can serve as a training environment for autonomous driving agents under various lighting
+              conditions. This approach enhances the robustness of the agents and reduces performance degradation when
+              deployed to the target real scene, compared to agents fully trained using the standard simulator rendering
+              pipeline.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="container">
+
+        <!-- Framework. -->
+        <div class="content">
+          <h2 class="title is-3">Framework Overview</h2>
+          <div class="content has-text-justified">
+            <p>
+              The overview figure presents our proposed framework, DriveEnv-NeRF, which is designed to create highly
+              realistic 3D simulations of a given environment. Initially, we capture videos of the target scene under
+              various lighting conditions to ensure a comprehensive representation. These videos are processed to
+              extract frames and generate camera parameters using structure-from-motion techniques. Following this, a
+              NeRF model is trained with these inputs to produce novel view renderings and 3D meshes of the scene. These
+              elements serve as the basis for visual observation and physical interactions within the simulation
+              environment. Appearance embeddings are incorporated into the NeRF model to enhance the realism and
+              variability of the environment. With DriveEnv-NeRF developed, the framework allows for the full evaluation
+              and training of a driving policy within this environment. This framework enables the prediction of
+              real-world performance and the application of the trained driving policy to real-world scenarios directly.
+            </p>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <img src="./static/images/framework_overview.png" alt="Framework Overview" style="width:100%">
+            </div>
+          </div>
+        </div>
+        <!--/ Framework. -->
+
+        <!-- Variable Lighting. -->
+        <div class="content">
+          <h2 class="title is-3">Variable Lighting</h2>
+          <div class="content has-text-justified">
+            <p>
+              Environments with various illuminations can be created by controlling appearance embedding.
+              Here are two examples of lighting transformations, which are from day to night and from cloudy to sunny.
+            </p>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/day2night.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">Day → Night</p>
+            </div>
+            <div class="column">
+              <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/cloudy2sunny.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">Cloudy → Sunny</p>
+            </div>
+          </div>
+        </div>
+        <!--/ Variable Lighting. -->
+
+        <!-- Appearance Interpolation. -->
+        <div class="content">
+          <h2 class="title is-3">Appearance Interpolation</h2>
+          <div class="content has-text-justified">
+            <p>
+              Interpolating between two appearance embeddings can create a transitional lighting.
+            </p>
+          </div>
+          <div class="columns is-vcentered interpolation-panel is-inline-flex">
+            <div class="column is-2 has-text-centered">
+              <p style="font-size: 100px;">☀️</p>
+            </div>
+            <div class="column interpolation-video-column">
+              <div id="interpolation-image-wrapper">
+                Loading...
+              </div>
+              <input class="slider is-fullwidth is-large is-info" id="interpolation-slider" step="1" min="0" max="100"
+                value="50" type="range">
+            </div>
+            <div class="column is-2 has-text-centered">
+              <p style="font-size: 100px;">🌙</p>
+            </div>
+          </div>
+        </div>
+        <!--/ Appearance Interpolation. -->
+        <br>
+
+        <!-- Sim2Real. -->
+        <div class="content">
+          <h2 class="title is-3">Sim2Real</h2>
+          <div class="content has-text-justified">
+            <p>
+              In addition, DriveEnv-NeRF can function as a training environment for RL driving agents with only raw
+              image inputs.
+              Training with varying lighting conditions enables the agents to adapt to different real-world scenarios.
+              These RL agents can be directly deployed to the real-world, maintaining high success rates in the
+              experiments.
+            </p>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/sim2real_day.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">Day</p>
+            </div>
+            <div class="column">
+              <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/sim2real_night.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">Night</p>
+            </div>
+          </div>
+        </div>
+        <!--/ Sim2Real. -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+        <blockquote>
+        (To be Added)
+        </blockquote>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              The template of this page is based on the
+              <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> website.
+              You are free to borrow the <a href="https://github.com/muyishen2040/DriveEnvNeRF">code</a> of this website,
+              we just ask that you link back to this page in the footer.
+              Please remember to remove the analytics code included in the header of the website which
+              you do not want on your website.
+            </p>
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
