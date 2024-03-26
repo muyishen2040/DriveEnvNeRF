@@ -26,7 +26,16 @@ real-world performance and the application of the trained driving policy to real
 
 ## Citing DriveEnv-NeRF
 
-> To be Added
+```sh
+@misc{shen2024driveenvnerf,
+      title={DriveEnv-NeRF: Exploration of A NeRF-Based Autonomous Driving Environment for Real-World Performance Validation}, 
+      author={Mu-Yi Shen and Chia-Chi Hsu and Hao-Yu Hou and Yu-Chen Huang and Wei-Fang Sun and Chia-Che Chang and Yu-Lun Liu and Chun-Yi Lee},
+      year={2024},
+      eprint={2403.15791},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
+```
 
 ## Website License
 
