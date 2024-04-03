@@ -1,5 +1,9 @@
 # DriveEnv-NeRF: Exploration of A NeRF-Based Autonomous Driving Environment for Real-World Performance Validation
 
+### [Project Page](https://muyishen2040.github.io/DriveEnvNeRF) | [Video](https://youtu.be/8wNflV_A5FM) | [Paper](https://arxiv.org/abs/2403.15791)
+
+[![arXiv](https://img.shields.io/badge/arXiv-2403.15791-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2403.15791)<br>
+
 This is the repository that contains source code for the [DriveEnv-NeRF website](https://muyishen2040.github.io/DriveEnvNeRF).
 
 ## [Demo Video](https://youtu.be/8wNflV_A5FM)
