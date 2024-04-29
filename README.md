@@ -41,6 +41,14 @@ real-world performance and the application of the trained driving policy to real
 }
 ```
 
+## Open-Source Implementations
+
+We've released a portion of our implementation code in Isaac Sim and Isaac ROS:
+
+- [Omniverse NeRF Extension](https://github.com/j3soon/omni-nerf-extension)
+
+Stay tuned for additional releases in the future.
+
 ## Website License
 
 The template of this website is borrowed from [Nerfies](https://github.com/nerfies/nerfies.github.io)
